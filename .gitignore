@@ -1,0 +1,7 @@
+# If you later add a public code sample subfolder, keep secrets out:
+.env
+venv/
+.venv/
+state/
+*.key
+*.pem
