@@ -29,5 +29,9 @@ venv/
 # Optional: local quote snapshot for dry-run / sandbox (see docs/operations/production.md)
 state/raw/cached_quotes.json
 
+# Large broker exports (rebuild locally; do not commit)
+brokers/t212_instruments.json
+brokers/t212_etf_providers.json
+
 # Large / generated (uncomment if you track repo without dumps)
 # archive/
