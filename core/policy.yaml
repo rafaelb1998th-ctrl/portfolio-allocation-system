@@ -1,0 +1,188 @@
+# HEDGE System Policy Configuration
+# Institutional-grade risk limits and trading rules
+
+benchmark: "60/40 GBP (SPY4/IGLT)"
+
+# Core Allocation Constants
+allocation:
+  # Fixed core macro sleeve allocation (% of NAV)
+  # 60% = BlackRock-like default, 50% = looser core
+  core_fixed: 0.60
+  
+  # TAA blend ratio within core (70% tactical, 30% strategic)
+  taa_blend: 0.70
+
+# Strategic Asset Allocation (SAA) - Long-term baseline for Core Macro
+saa:
+  equities: 0.60
+  bonds: 0.35
+  real_assets: 0.05
+
+# SAA Baseline Weights (Strategic Asset Allocation)
+# These are blended with tactical allocations within Core Macro
+saa_weights:
+  EQQQ: 0.20  # Nasdaq 100
+  XLIS: 0.15  # S&P 500
+  SPY4: 0.25  # S&P 400 Mid-Cap
+  IDUP: 0.20  # Developed Markets
+  IGLT: 0.10  # UK Gilts (bonds)
+  DTLE: 0.05  # US Treasury 20+yr (bonds - hedging)
+  GLD: 0.05   # Gold (real assets)
+  CASH: 0.00  # Cash handled separately
+
+# Risk Management Limits
+risk:
+  # Maximum position size as % of NAV
+  max_pos: 0.10
+  # Allow allocator rounding noise above max_pos (institutional checks)
+  max_pos_rounding_tolerance: 0.01
+  
+  # Maximum sector concentration
+  max_sector: 0.25
+  
+  # Minimum cash buffer (% of NAV)
+  cash_floor: 0.05
+  cash_floor_rounding_tolerance: 0.02
+  
+  # Maximum monthly turnover (% of NAV)
+  turnover_cap_mtd: 0.25
+  
+  # Maximum rolling 12-month drawdown
+  max_drawdown_rolling_12m: 0.20
+  
+  # Target fund volatility (annualized, optional for vol targeting)
+  target_fund_vol: 0.08
+
+# Rebalancing Rules
+rebalancing:
+  # Weight drift threshold to trigger rebalance (%)
+  drift_threshold: 0.05
+  
+  # Confidence threshold for gating tactical sleeve
+  confidence_threshold: 0.35
+  
+  # Persistent core holdings - held for years, only rebalanced on large drift
+  # These are "permanent capital" positions that rarely change
+  persistent_core_holdings:
+    - EQQQ   # Nasdaq 100 (core equity)
+    - XLIS   # S&P 500 (core equity)
+    - SPY4   # S&P 400 Mid-Cap (core equity)
+    - IDUP   # Developed Markets (core equity)
+    - IGLT   # UK Gilts (core bonds)
+    - GLD    # Gold (real assets)
+  
+  # Drift threshold for persistent holdings (larger = less frequent trading)
+  # Only rebalance if drift > this threshold (default: 0.10 = 10%)
+  persistent_drift_threshold: 0.10
+  
+  # Hysteresis bands (avoid ping-pong rebalancing)
+  # Enter rebalance at >enter threshold, exit/lock once back <exit threshold
+  hysteresis:
+    core_enter: 0.10   # Core: enter rebalance at >10% drift
+    core_exit: 0.07    # Core: exit/lock once back <7% drift
+    sat_enter: 0.05    # Satellites: enter rebalance at >5% drift
+    sat_exit: 0.03     # Satellites: exit/lock once back <3% drift
+  
+  # Per-asset overrides for persistent holdings
+  # Some assets can use different drift thresholds
+  persistent_overrides:
+    IGLT:
+      drift: 0.08   # Bonds: slightly tighter (8%)
+    GLD:
+      drift: 0.09   # Gold: slightly tighter (9%)
+  
+  # Staggered rebalances (split core rebalance across days)
+  stagger_core: true   # Split core rebalance across 2 trade days
+  
+  # Rebalancing frequency by sleeve
+  rebalance_frequency:
+    core: "quarterly"      # Core Macro: rebalance quarterly (or on large drift)
+    tactical: "monthly"    # Tactical: rebalance monthly (or on regime change)
+    emerging: "quarterly"  # Emerging Markets: rebalance quarterly
+    dividends: "annually"  # Dividends: rebalance annually
+    individual_stocks: "monthly"  # Individual Stocks: rebalance monthly
+
+# Execution Rules
+execution:
+  # Minimum order size in GBP
+  min_ticket_gbp: 1.0
+  
+  # Maximum bid-ask spread in basis points (60 bps = 0.6%)
+  spread_bps_limit: 60
+  
+  # Cancel stale orders after N minutes
+  cancel_stale_minutes: 15
+  
+  # Liquidity guard: skip if order notional > 2% of 20-day median notional
+  # (if ADV data available, otherwise ignored)
+  adv_notional_cap: 0.02
+  
+  # FX buffer: leave 0.3% cash for FX slippage when buying USD ETFs
+  fx_buffer_cash: 0.003
+
+# Dynamic Sleeve Allocation (for non-core 40%)
+sleeves:
+  # Min/max caps for dynamic sleeves (% of NAV)
+  tactical:
+    min: 0.05
+    max: 0.20
+  emerging:
+    min: 0.05
+    max: 0.20
+  dividends:
+    min: 0.10
+    max: 0.25
+  
+  # Performance scoring weights
+  sharpe_weights:
+    sharpe_3m: 0.6
+    sharpe_6m: 0.4
+  
+  # EWMA half-life for score smoothing (trading days)
+  score_half_life_days: 10
+  
+  # Score floor: minimum score to avoid zeroing sleeves
+  score_floor: 0.01
+
+# Logging
+logging:
+  # Audit logging: log all skipped trades with reasons
+  audit_skips: true
+
+# Research / pilot stock sleeve (momentum + holding manager)
+research:
+  # Pilot: keep stock sleeve at 10% NAV (meta_allocator uses this cap)
+  stocks_cap_nav: 0.10
+  individual_stock_universe:
+    - AAPL
+    - MSFT
+    - GOOGL
+    - NVDA
+    - AMZN
+    - META
+    - JPM
+    - BAC
+    - V
+    - MA
+    - GS
+    - UNH
+    - JNJ
+    - PFE
+    - ABT
+    - TMO
+    - WMT
+    - HD
+    - COST
+    - NKE
+    - CAT
+    - HON
+  momentum_stocks:
+    enabled: true
+    top_n: 5
+    min_score: 0.55
+    max_turnover_fraction: 0.25
+    closes_path: state/raw/stock_closes.json
+    # Used when primary file missing (repo fixture for dev/CI)
+    fallback_closes_path: tests/fixtures/stock_closes.json
+    try_yfinance: true
+

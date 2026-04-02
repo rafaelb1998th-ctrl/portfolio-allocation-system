@@ -1,0 +1,10 @@
+[Unit]
+Description=DEPRECATED (Pass 2): use hedge-daily-cycle.timer instead
+
+[Timer]
+OnCalendar=Mon..Fri 11:00
+Unit=hedge-trader.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target

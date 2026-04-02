@@ -1,0 +1,13 @@
+[Unit]
+Description=DEPRECATED (Pass 2): executor-only — use hedge-daily-cycle.service. Manual/debug only.
+
+[Service]
+Type=oneshot
+User=teckz
+Group=teckz
+WorkingDirectory=/home/teckz/Documents/HEDGE
+EnvironmentFile=-/home/teckz/Documents/HEDGE/.env
+ExecStart=/home/teckz/Documents/HEDGE/venv/bin/python -m core.execution.trade_executor
+Restart=no
+StandardOutput=journal
+StandardError=journal

@@ -1,0 +1,7 @@
+{
+  "_comment": "Manual risk context only — does not generate trades. Edit dates as needed.",
+  "as_of": "2026-03-29",
+  "risk_level": "normal",
+  "events_today": [],
+  "notes": ""
+}

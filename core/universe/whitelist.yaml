@@ -1,0 +1,123 @@
+# HEDGE Universe Whitelist
+# Curated list of approved issuers and instruments per sleeve
+
+# Approved ETF Issuers
+issuers_allow:
+  - iShares
+  - Vanguard
+  - SPDR
+  - Invesco
+  - WisdomTree
+
+# Selection Rules
+rules:
+  # Only UCITS-compliant funds
+  ucits_only: true
+  
+  # Allowed domiciles (typical UCITS jurisdictions)
+  domiciles_allow:
+    - IE  # Ireland
+    - LU  # Luxembourg
+    - UK  # United Kingdom
+  
+  # Currency preferences (order matters)
+  currency_prefer:
+    - GBP
+    - USD
+  
+  # Maximum expense ratio (30 bps = 0.30%)
+  expense_ratio_max: 0.30
+  
+  # Minimum trading history (days)
+  min_history_days: 365
+
+# Instrument Buckets by Sleeve
+buckets:
+  # Core Macro Sleeve (60% fixed allocation)
+  # Long-horizon regime/SAA blend instruments
+  core_macro:
+    - EQQQ    # iShares Nasdaq 100 UCITS ETF
+    - XLIS    # iShares Core S&P 500 UCITS ETF
+    - SPY4    # SPDR S&P 400 Mid-Cap ETF
+    - IDUP    # iShares Developed Markets UCITS ETF
+    - VUKE    # Vanguard FTSE 100 UCITS ETF
+    - XLU     # Utilities Select Sector SPDR
+    - XLP     # Consumer Staples Select Sector SPDR
+    - GLD     # SPDR Gold Trust (or UCITS equivalent)
+    - IGLT    # iShares Core UK Gilts UCITS ETF (UK bonds)
+    - DTLE    # iShares USD Treasury Bond 20+yr (US long-term bonds - hedging)
+    - TRSY    # SPDR Bloomberg U.S. Treasury Bond (US Treasury - hedging)
+  
+  # Tactical Short-term Sleeve (dynamic allocation)
+  # Momentum/mean-reversion ETF sleeve
+  tactical:
+    - EQQQ    # Nasdaq 100
+    - XLIS    # S&P 500
+    - XLY     # Consumer Discretionary
+    - XLI     # Industrials
+    - GLD     # Gold
+    - XLK     # Technology
+    - SPY     # S&P 500 (alternative)
+  
+  # Long-term Growth & Thematic Sleeve (dynamic allocation)
+  # AI, technology, innovation, long-term themes
+  # Like hedge funds: Bridgewater, Renaissance, etc. allocate 10-20% to themes
+  long_term_thematic:
+    - WTAI    # WisdomTree Artificial Intelligence (AI exposure)
+    - XLK     # Technology Select Sector SPDR
+    - EQQQ    # Nasdaq 100 (tech-heavy, includes AI companies)
+    - XLIS    # S&P 500 (includes tech/AI leaders)
+  
+  # Emerging Markets Sleeve (dynamic allocation)
+  emerging:
+    - EEM     # iShares MSCI Emerging Markets ETF
+    - VWO     # Vanguard FTSE Emerging Markets ETF
+    - FXI     # iShares China Large-Cap ETF
+    - EWZ     # iShares MSCI Brazil ETF
+  
+  # Individual stocks sleeve (momentum pilot — must align with policy research universe)
+  individual_stocks:
+    - AAPL
+    - MSFT
+    - GOOGL
+    - NVDA
+    - AMZN
+    - META
+    - JPM
+    - BAC
+    - V
+    - MA
+    - GS
+    - UNH
+    - JNJ
+    - PFE
+    - ABT
+    - TMO
+    - WMT
+    - HD
+    - COST
+    - NKE
+    - CAT
+    - HON
+
+  # Dividends & Income Sleeve (dynamic allocation)
+  # Income-focused: REITs, utilities, dividend ETFs
+  dividends:
+    - VIG     # Vanguard Dividend Appreciation ETF
+    - IDUP    # iShares Developed Markets (dividend tilt)
+    - XLU     # Utilities
+    - XLP     # Consumer Staples
+    - VHYL    # Vanguard FTSE All-World High Dividend Yield UCITS ETF
+    - IWD     # iShares Russell 1000 Value ETF
+
+# Instrument Metadata (for expense ratios, tracking, etc.)
+# Can be expanded with actual data later
+metadata:
+  # Example structure (can be populated from T212 API or static data)
+  # EQQQ:
+  #   expense_ratio: 0.20
+  #   issuer: iShares
+  #   domicile: IE
+  #   currency: USD
+  #   tracking_index: NASDAQ-100
+

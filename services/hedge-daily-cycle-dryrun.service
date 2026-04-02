@@ -1,0 +1,15 @@
+[Unit]
+Description=HEDGE daily cycle (DRY-RUN) — full pipeline, no broker execution
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=teckz
+Group=teckz
+WorkingDirectory=/home/teckz/Documents/HEDGE
+EnvironmentFile=-/home/teckz/Documents/HEDGE/.env
+ExecStart=/home/teckz/Documents/HEDGE/venv/bin/python -m app.run_daily_cycle --dry-run
+Restart=no
+StandardOutput=journal
+StandardError=journal

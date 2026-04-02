@@ -1,0 +1,10 @@
+[Unit]
+Description=HEDGE Export Instruments (monthly)
+
+[Timer]
+OnCalendar=*-*-01 09:15
+Unit=hedge-export-instruments.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target

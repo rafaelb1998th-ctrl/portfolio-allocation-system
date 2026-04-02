@@ -1,0 +1,18 @@
+[Unit]
+Description=HEDGE Health Monitor
+After=network.target
+
+[Service]
+Type=oneshot
+User=teckz
+Group=teckz
+WorkingDirectory=/home/teckz/Documents/HEDGE
+EnvironmentFile=-/home/teckz/Documents/HEDGE/.env
+Environment="PATH=/home/teckz/Documents/HEDGE/venv/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/home/teckz/Documents/HEDGE/venv/bin/python -m core.services.health_monitor
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+

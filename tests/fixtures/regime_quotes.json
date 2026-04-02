@@ -1,0 +1,12 @@
+{
+  "_comment": "Static regime inputs for dry-run, CI, or keys without /equity/quotes. Not for live trading.",
+  "prices": {
+    "XLP": 82.5,
+    "XLY": 210.3,
+    "XLU": 42.8,
+    "XLI": 145.6,
+    "GLD": 245.0,
+    "SPY": 580.25,
+    "XLF": 52.4
+  }
+}

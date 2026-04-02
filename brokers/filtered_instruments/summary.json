@@ -1,0 +1,32 @@
+{
+  "total_instruments": 15683,
+  "filtered_count": 12444,
+  "rejected_count": 3239,
+  "by_category": {
+    "Stock": 10460,
+    "ETF": 1952,
+    "REIT": 32
+  },
+  "filter_date": "2025-11-09T10:38:35.842445+00:00",
+  "whitelist_criteria": {
+    "approved_issuers": [
+      "iShares",
+      "Vanguard",
+      "SPDR",
+      "Xtrackers",
+      "Invesco",
+      "WisdomTree"
+    ],
+    "ucits_only": true,
+    "allowed_domiciles": [
+      "IE",
+      "LU",
+      "UK"
+    ],
+    "preferred_currencies": [
+      "GBP",
+      "USD"
+    ],
+    "min_history_days": 365
+  }
+}

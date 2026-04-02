@@ -1,0 +1,10 @@
+[Unit]
+Description=HEDGE OFFICIAL production timer — Mon–Fri daily cycle
+
+[Timer]
+OnCalendar=Mon..Fri 10:40
+Unit=hedge-daily-cycle.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target

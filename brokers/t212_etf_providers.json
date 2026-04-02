@@ -1,0 +1,392 @@
+{
+  "by_provider": {
+    "SPY": [
+      {
+        "ticker": "3SPYl_EQ",
+        "shortName": "3SPY",
+        "longName": "",
+        "isin": "XS2472197149",
+        "currency": ""
+      },
+      {
+        "ticker": "SPY4s_EQ",
+        "shortName": "SPY4",
+        "longName": "",
+        "isin": "IE00B4YBJ215",
+        "currency": ""
+      },
+      {
+        "ticker": "SPY2d_EQ",
+        "shortName": "SPY2",
+        "longName": "",
+        "isin": "IE00BH4GR342",
+        "currency": ""
+      },
+      {
+        "ticker": "ISPYm_EQ",
+        "shortName": "ISPY",
+        "longName": "",
+        "isin": "IE00BYPLS672",
+        "currency": ""
+      },
+      {
+        "ticker": "DSPYd_EQ",
+        "shortName": "DSPY",
+        "longName": "",
+        "isin": "XS2875106242",
+        "currency": ""
+      },
+      {
+        "ticker": "SPYLa_EQ",
+        "shortName": "SPYL",
+        "longName": "",
+        "isin": "IE000XZSV718",
+        "currency": ""
+      },
+      {
+        "ticker": "SPY5s_EQ",
+        "shortName": "SPY5",
+        "longName": "",
+        "isin": "IE00B6YX5C33",
+        "currency": ""
+      },
+      {
+        "ticker": "SPYOl_EQ",
+        "shortName": "SPYO",
+        "longName": "",
+        "isin": "XS2875106242",
+        "currency": ""
+      },
+      {
+        "ticker": "ASPYl_EQ",
+        "shortName": "ASPY",
+        "longName": "",
+        "isin": "IE000ST40PX8",
+        "currency": ""
+      },
+      {
+        "ticker": "SPY3l_EQ",
+        "shortName": "SPY3",
+        "longName": "",
+        "isin": "XS2472197149",
+        "currency": ""
+      }
+    ],
+    "VTI": [
+      {
+        "ticker": "VTI_EQ",
+        "shortName": "VTI",
+        "longName": "",
+        "isin": "US9229087690",
+        "currency": ""
+      },
+      {
+        "ticker": "VTIQ_US_EQ",
+        "shortName": "NKLAQ",
+        "longName": "",
+        "isin": "US6541103031",
+        "currency": ""
+      }
+    ],
+    "IVV": [
+      {
+        "ticker": "IVV_EQ",
+        "shortName": "IVV",
+        "longName": "",
+        "isin": "US4642872000",
+        "currency": ""
+      },
+      {
+        "ticker": "ADGI_US_EQ",
+        "shortName": "IVVD",
+        "longName": "",
+        "isin": "US00534A1025",
+        "currency": ""
+      }
+    ],
+    "QQQ": [
+      {
+        "ticker": "QQQOl_EQ",
+        "shortName": "QQQO",
+        "longName": "",
+        "isin": "XS2875105608",
+        "currency": ""
+      },
+      {
+        "ticker": "SQQQl_EQ",
+        "shortName": "SQQQ",
+        "longName": "",
+        "isin": "XS2399364319",
+        "currency": ""
+      },
+      {
+        "ticker": "QQQSm_EQ",
+        "shortName": "QQQS",
+        "longName": "",
+        "isin": "IE00BLRPRJ20",
+        "currency": ""
+      },
+      {
+        "ticker": "EQQQm_EQ",
+        "shortName": "EQQQ",
+        "longName": "",
+        "isin": "IE0032077012",
+        "currency": ""
+      },
+      {
+        "ticker": "QQQ5l_EQ",
+        "shortName": "QQQ5",
+        "longName": "",
+        "isin": "XS2399364152",
+        "currency": ""
+      },
+      {
+        "ticker": "EQQQs_EQ",
+        "shortName": "EQQQ",
+        "longName": "",
+        "isin": "IE0032077012",
+        "currency": ""
+      },
+      {
+        "ticker": "QQQYl_EQ",
+        "shortName": "QQQY",
+        "longName": "",
+        "isin": "XS2875105608",
+        "currency": ""
+      },
+      {
+        "ticker": "QQQ3m_EQ",
+        "shortName": "QQQ3",
+        "longName": "",
+        "isin": "IE00BLRPRL42",
+        "currency": ""
+      },
+      {
+        "ticker": "QQQAs_EQ",
+        "shortName": "QQQA",
+        "longName": "",
+        "isin": "IE000SB4G4I4",
+        "currency": ""
+      },
+      {
+        "ticker": "EQQQl_EQ",
+        "shortName": "EQQQ",
+        "longName": "",
+        "isin": "IE0032077012",
+        "currency": ""
+      }
+    ]
+  },
+  "spy_alternatives": [
+    {
+      "ticker": "3SPYl_EQ",
+      "shortName": "3SPY",
+      "longName": "",
+      "isin": "XS2472197149"
+    },
+    {
+      "ticker": "SPY4s_EQ",
+      "shortName": "SPY4",
+      "longName": "",
+      "isin": "IE00B4YBJ215"
+    },
+    {
+      "ticker": "SPY2d_EQ",
+      "shortName": "SPY2",
+      "longName": "",
+      "isin": "IE00BH4GR342"
+    },
+    {
+      "ticker": "ISPYm_EQ",
+      "shortName": "ISPY",
+      "longName": "",
+      "isin": "IE00BYPLS672"
+    },
+    {
+      "ticker": "DSPYd_EQ",
+      "shortName": "DSPY",
+      "longName": "",
+      "isin": "XS2875106242"
+    },
+    {
+      "ticker": "SPYLa_EQ",
+      "shortName": "SPYL",
+      "longName": "",
+      "isin": "IE000XZSV718"
+    },
+    {
+      "ticker": "SPY5s_EQ",
+      "shortName": "SPY5",
+      "longName": "",
+      "isin": "IE00B6YX5C33"
+    },
+    {
+      "ticker": "SPYOl_EQ",
+      "shortName": "SPYO",
+      "longName": "",
+      "isin": "XS2875106242"
+    },
+    {
+      "ticker": "ASPYl_EQ",
+      "shortName": "ASPY",
+      "longName": "",
+      "isin": "IE000ST40PX8"
+    },
+    {
+      "ticker": "SPY3l_EQ",
+      "shortName": "SPY3",
+      "longName": "",
+      "isin": "XS2472197149"
+    },
+    {
+      "ticker": "SPYSl_EQ",
+      "shortName": "SPYS",
+      "longName": "",
+      "isin": "XS2399364665"
+    },
+    {
+      "ticker": "SPYYd_EQ",
+      "shortName": "SPYY",
+      "longName": "",
+      "isin": "IE00B44Z5B48"
+    },
+    {
+      "ticker": "SPYId_EQ",
+      "shortName": "SPYI",
+      "longName": "",
+      "isin": "IE00B3YLTY66"
+    },
+    {
+      "ticker": "SPYJd_EQ",
+      "shortName": "SPYJ",
+      "longName": "",
+      "isin": "IE00B8GF1M35"
+    },
+    {
+      "ticker": "SPY4d_EQ",
+      "shortName": "SPY4",
+      "longName": "",
+      "isin": "IE00B4YBJ215"
+    },
+    {
+      "ticker": "SPYAd_EQ",
+      "shortName": "SPYA",
+      "longName": "",
+      "isin": "IE00B466KX20"
+    },
+    {
+      "ticker": "SPY4l_EQ",
+      "shortName": "SPY4",
+      "longName": "",
+      "isin": "IE00B4YBJ215"
+    },
+    {
+      "ticker": "SPYLs_EQ",
+      "shortName": "SPYL",
+      "longName": "",
+      "isin": "IE000XZSV718"
+    },
+    {
+      "ticker": "SSPYl_EQ",
+      "shortName": "SSPY",
+      "longName": "",
+      "isin": "XS2399364665"
+    },
+    {
+      "ticker": "SPYMd_EQ",
+      "shortName": "SPYM",
+      "longName": "",
+      "isin": "IE00B469F816"
+    },
+    {
+      "ticker": "SPYDd_EQ",
+      "shortName": "SPYD",
+      "longName": "",
+      "isin": "IE00B6YX5D40"
+    },
+    {
+      "ticker": "SPYWd_EQ",
+      "shortName": "SPYW",
+      "longName": "",
+      "isin": "IE00B5M1WJ87"
+    },
+    {
+      "ticker": "SPYEl_EQ",
+      "shortName": "SPYE",
+      "longName": "",
+      "isin": "XS2297550308"
+    },
+    {
+      "ticker": "KGSPY_US_EQ",
+      "shortName": "KGSPY",
+      "longName": "",
+      "isin": "US4964021087"
+    },
+    {
+      "ticker": "SPYFd_EQ",
+      "shortName": "SPYF",
+      "longName": "",
+      "isin": "IE00B7452L46"
+    },
+    {
+      "ticker": "SPYPl_EQ",
+      "shortName": "SPYP",
+      "longName": "",
+      "isin": "XS2297550308"
+    },
+    {
+      "ticker": "SPYYl_EQ",
+      "shortName": "SPYY",
+      "longName": "",
+      "isin": "XS2875106242"
+    },
+    {
+      "ticker": "ISPYl_EQ",
+      "shortName": "ISPY",
+      "longName": "",
+      "isin": "IE00BYPLS672"
+    },
+    {
+      "ticker": "SPYXd_EQ",
+      "shortName": "SPYX",
+      "longName": "",
+      "isin": "IE00B48X4842"
+    },
+    {
+      "ticker": "SPY1d_EQ",
+      "shortName": "SPY1",
+      "longName": "",
+      "isin": "IE00B802KR88"
+    },
+    {
+      "ticker": "USPYl_EQ",
+      "shortName": "USPY",
+      "longName": "",
+      "isin": "IE00BYPLS672"
+    },
+    {
+      "ticker": "SPYGd_EQ",
+      "shortName": "SPYG",
+      "longName": "",
+      "isin": "IE00B6S2Z822"
+    },
+    {
+      "ticker": "SPY5d_EQ",
+      "shortName": "SPY5",
+      "longName": "",
+      "isin": "IE00B6YX5C33"
+    },
+    {
+      "ticker": "SPY5l_EQ",
+      "shortName": "SPY5",
+      "longName": "",
+      "isin": "IE00B6YX5C33"
+    },
+    {
+      "ticker": "5SPYl_EQ",
+      "shortName": "5SPY",
+      "longName": "",
+      "isin": "XS2399364582"
+    }
+  ]
+}

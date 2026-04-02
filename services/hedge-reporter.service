@@ -1,0 +1,13 @@
+[Unit]
+Description=HEDGE Reporter
+
+[Service]
+Type=oneshot
+User=teckz
+Group=teckz
+WorkingDirectory=/home/teckz/Documents/HEDGE
+EnvironmentFile=-/home/teckz/Documents/HEDGE/.env
+ExecStart=/home/teckz/Documents/HEDGE/venv/bin/python -m core.services.reporter
+Restart=no
+StandardOutput=journal
+StandardError=journal

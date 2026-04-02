@@ -1,0 +1,12 @@
+[Unit]
+Description=HEDGE Health Monitor (nightly)
+Requires=hedge-health.service
+
+[Timer]
+OnCalendar=*-*-* 23:55
+Unit=hedge-health.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

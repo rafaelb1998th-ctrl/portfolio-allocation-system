@@ -1,0 +1,15 @@
+# Example only — do not install. Historical unit watched portfolio.json and started
+# hedge-trader.service without regenerating trade_list.json.
+#
+# To use path-based runs safely, create a new .path that starts hedge-daily-cycle.service
+# (after reviewing lock + frequency behavior).
+
+[Unit]
+Description=EXAMPLE ONLY — do not use (deprecated pattern)
+
+[Path]
+PathChanged=/home/teckz/Documents/HEDGE/state/portfolio.json
+Unit=hedge-daily-cycle.service
+
+[Install]
+WantedBy=multi-user.target

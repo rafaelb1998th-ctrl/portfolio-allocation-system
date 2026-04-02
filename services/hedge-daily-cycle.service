@@ -1,0 +1,15 @@
+[Unit]
+Description=HEDGE OFFICIAL production cycle — app.run_daily_cycle (collect → regime → allocate → trades → execute → audit)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=teckz
+Group=teckz
+WorkingDirectory=/home/teckz/Documents/HEDGE
+EnvironmentFile=-/home/teckz/Documents/HEDGE/.env
+ExecStart=/home/teckz/Documents/HEDGE/venv/bin/python -m app.run_daily_cycle
+Restart=no
+StandardOutput=journal
+StandardError=journal

@@ -1,0 +1,12 @@
+[Unit]
+Description=HEDGE Performance Reporter (daily)
+Requires=hedge-performance.service
+
+[Timer]
+OnCalendar=Mon..Fri 09:30
+Unit=hedge-performance.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

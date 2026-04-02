@@ -1,0 +1,18 @@
+[Unit]
+Description=HEDGE Rebalance Manager (drift/regime → starts hedge-daily-cycle.service when needed)
+After=network.target
+
+[Service]
+Type=oneshot
+User=teckz
+Group=teckz
+WorkingDirectory=/home/teckz/Documents/HEDGE
+Environment="PATH=/home/teckz/Documents/HEDGE/venv/bin:/usr/local/bin:/usr/bin:/bin"
+EnvironmentFile=-/home/teckz/Documents/HEDGE/.env
+ExecStart=/home/teckz/Documents/HEDGE/venv/bin/python -m core.services.rebalance_manager
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+

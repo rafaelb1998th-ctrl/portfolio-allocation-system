@@ -1,0 +1,10 @@
+[Unit]
+Description=HEDGE daily cycle timer (DRY-RUN) — Mon–Fri, safe pipeline
+
+[Timer]
+OnCalendar=Mon..Fri 10:40
+Unit=hedge-daily-cycle-dryrun.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target
